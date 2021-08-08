@@ -656,7 +656,7 @@ table tr>*:first-child,table tr>*:last-child {
 /*--------------------------------------------------------------
 # Service
 --------------------------------------------------------------*/
-.learn-more,.forgot_password {
+.learn-more{
   font-weight: bold;
   text-decoration: underline;
   font-size: 1em;
@@ -912,7 +912,7 @@ section.why-choose {
 }
 
 .form {
-  width: 70%;
+  width: 55%;
 }
 .form input:focus {
   box-shadow: none;
@@ -962,10 +962,34 @@ section.why-choose {
   background-position: center;
   background-size: 80%;
 }
+.google_icon{
+  width: 10%;
+  vertical-align: text-top;
+  margin-right: 2px;
+}
+.forgot_password {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 0.8em;
+}
 @media (min-width: 768px) {
-#signin,#signin>div {
+#signin,#Register, #signin>div, #Register>div {
   height: 100vh;
 }
+}
+@media (max-width: 767px){
+  .form{
+    width: 80% !important;
+  }
+  .mob_set{
+    padding-top: 20px;
+  }
+  .w-25{
+    width: 40% !important;
+  }
+  h3 {
+    font-size: 25px;
+  }
 }
 /*--------------------------------------------------------------
 # Register / SignIn End
