@@ -42,6 +42,9 @@ h5 {
 h4 {
   font-size: 1.5em;
 }
+a,p,input::placeholder,label {
+  font-size: 0.8em;
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -493,7 +496,7 @@ a.login {
 --------------------------------------------------------------*/
 #banner {
   width: 100%;
-  height: 85vh;
+  height: 95vh;
   background: url(../img/forground.svg) top left;
   background-size: cover;
   position: relative;
@@ -574,8 +577,9 @@ a.login {
 
 @media (max-width: 768px) {
   #banner {
-    height: 100vh;
-  }
+    height: auto;
+    padding-top: 110px;
+}
   #banner h1 {
     font-size: 28px;
     line-height: 36px;
@@ -610,6 +614,7 @@ table {
 }
 table th {
   background-color: rgb(19 181 156 / 5%);
+  white-space: nowrap;
 }
 table tr>* {
   vertical-align: top !important;
@@ -651,9 +656,10 @@ table tr>*:first-child,table tr>*:last-child {
 /*--------------------------------------------------------------
 # Service
 --------------------------------------------------------------*/
-.learn-more {
+.learn-more,.forgot_password {
   font-weight: bold;
   text-decoration: underline;
+  font-size: 1em;
 }
 .services .card {
   border: none;
@@ -686,9 +692,8 @@ section.why-choose {
 /*--------------------------------------------------------------
 # Comparison
 --------------------------------------------------------------*/
-
-table tr>*:first-child {
-  width: 170px;
+.comparison table th {
+  white-space: nowrap;
 }
 /*--------------------------------------------------------------
 # Comparison
@@ -880,42 +885,14 @@ table tr>*:first-child {
 # Register / SignIn
 --------------------------------------------------------------*/
 
-
-.card {
-  width: 100%;
-  border: none
-}
-
-.btr {
-  border-top-right-radius: 5px !important
-}
-
-.btl {
-  border-top-left-radius: 5px !important
-}
-
-.btn-dark {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd
-}
-
-.btn-dark:hover {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd
-}
-
 .nav-pills {
   display: inline-table;
-  width: 60%;
-  margin: 0 auto;
 }
-
 .nav-pills .nav-link {
+  padding: 3px 5px;
   border-radius: 0px;
+  width: 90px;
 }
-
 .nav-item {
   display: table-cell;
 }
@@ -935,73 +912,68 @@ table tr>*:first-child {
 }
 
 .form {
-  padding: 10px;
-  height: 300px;
-  width: 400px;
+  width: 70%;
 }
-
-.form input {
-  margin-bottom: 12px;
-  border-radius: 3px;
-}
-
 .form input:focus {
   box-shadow: none;
 }
-
 .tab-content{
   text-align: -webkit-center;
   text-align: -moz-center;
 }
-
-img{
-  width: 100%;
-  height: auto;
-}
-
-.bg_section{
-  background: url('img/Rectangle\ 5312.svg') top center no-repeat;
-  height: 100vh;
-}
-
 .right_image{
   padding: 0px 50px 0px 20px;
 }
-
 .btn-google {
   color: #545454;
   background-color: #ffffff;
-  box-shadow: 0 1px 2px 1px #ddd
+  font-size: 0.8em;
 }
-
-a.forgot_password{
-  color: #34bfaa;
-  text-decoration: underline;
-}
-
-.w-10{
-  width: 10%;
-}
-
 .or-container {
   align-items: center;
   color: #ccc;
   display: flex;
-  margin: 25px 0
+  margin: 1.2em 0;
 }
-
+.or-label{
+  font-size: 0.8em;
+}
 .line-separator {
   background-color: #ccc;
   flex-grow: 5;
   height: 1px
 }
-
 .or-label {
   flex-grow: 1;
   margin: 0 15px;
   text-align: center
 }
+.disabled {
+  background-color: rgb(28 28 28 / 10%);
+  border-color: rgb(28 28 28 / 10%);
+}
+.img-bg {
+  background: rgb(19 181 156 / 10%);
+}
+.img-bg {
+  background-color: rgb(19 181 156 / 10%);
+  background-image: url(../img/signinbg.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+@media (min-width: 768px) {
+#signin,#signin>div {
+  height: 100vh;
+}
+}
+/*--------------------------------------------------------------
+# Register / SignIn End
+--------------------------------------------------------------*/
 
-.btn.btn-lg.btn-google.btn-block.text-uppercase.btn-outline {
-  font-size: 12px !important;
+/*--------------------------------------------------------------
+# Proprietorship
+--------------------------------------------------------------*/
+.frequentlybg {
+  background-image: url(../img/proprietorship/frequently.png);
 }
