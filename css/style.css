@@ -1155,8 +1155,9 @@ section.why-choose {
   overflow: hidden;
   width: 100%;
 }
-.payment .standard {
+.payment .plan:hover {
   border-color:#13b59c;
+  box-shadow: 1px 2px 2px 1px #ddd;
 }
 .payment .box h3 {
   font-size: 1em;
