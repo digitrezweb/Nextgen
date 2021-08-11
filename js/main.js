@@ -162,6 +162,7 @@
 
 })(jQuery);
 
+
 // Search box popup 
 
 $( document ).ready(function() {

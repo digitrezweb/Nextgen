@@ -89,10 +89,10 @@
 	position: relative;
 	margin: 2px 0 0 0;
 	padding: .5em .5em .5em .7em;
-	font-size: 100%;
+	font-size: 0.8em;
 }
 .ui-accordion .ui-accordion-content {
-	padding: 1em 2.2em;
+	padding: 0.2em 1.5em;
 	border-top: 0;
 	overflow: auto;
 }
@@ -893,9 +893,9 @@ body .ui-tooltip {
 	border: 1px solid #c5c5c5;
 }
 .ui-widget-content {
-	border: 1px solid #dddddd;
-	background: #ffffff;
-	color: #333333;
+	border: 1px solid transparent;
+	background: transparent;
+	color: #13b59c;
 }
 .ui-widget-content a {
 	color: #333333;
@@ -921,10 +921,10 @@ body .ui-tooltip {
 works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-	border: 1px solid #c5c5c5;
-	background: #f6f6f6;
+	border: 1px solid transparent;
+	background: transparent;
 	font-weight: normal;
-	color: #454545;
+	color: #ffffff;
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -944,10 +944,10 @@ a:visited.ui-button,
 .ui-widget-header .ui-state-focus,
 .ui-button:hover,
 .ui-button:focus {
-	border: 1px solid #cccccc;
-	background: #ededed;
+	border: 1px solid transparent;
+	background: transparent;
 	font-weight: normal;
-	color: #2b2b2b;
+	color: #13b59c;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -962,9 +962,11 @@ a.ui-button:focus {
 	color: #2b2b2b;
 	text-decoration: none;
 }
-
+.ui-accordion-content {
+	margin-bottom: 0.5em;
+}
 .ui-visual-focus {
-	box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+	box-shadow: none;
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
@@ -972,15 +974,15 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #003eff;
-	background: #007fff;
+	border: 1px solid transparent;
+	background: transparent;
 	font-weight: normal;
-	color: #ffffff;
+	color: #13b59c;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
-	border: #003eff;
-	background-color: #ffffff;
+	border: #13b59c;
+	background-color: transparent;
 }
 .ui-state-active a,
 .ui-state-active a:link,
@@ -1056,31 +1058,52 @@ a.ui-button:active,
 	height: 16px;
 }
 .ui-icon,
-.ui-widget-content .ui-icon {
-	background-image: url("../../../img/proprietorship/next-1.svg");
+.ui-widget-content .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconplus.svg");
 }
-.ui-widget-header .ui-icon {
-	background-image: url("../../../img/proprietorship/next-1.svg");
+.ui-widget-header .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconplus.svg");
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
-.ui-button:focus .ui-icon {
-	background-image: url("images/ui-icons_555555_256x240.png");
+.ui-button:focus .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconplus.svg");
 }
 .ui-state-active .ui-icon,
-.ui-button:active .ui-icon {
-	background-image: url("images/ui-icons_ffffff_256x240.png");
+.ui-button:active .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconminus.svg");
 }
 .ui-state-highlight .ui-icon,
-.ui-button .ui-state-highlight.ui-icon {
-	background-image: url("images/ui-icons_777620_256x240.png");
+.ui-button .ui-state-highlight.ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconminus.svg");
 }
 .ui-state-error .ui-icon,
-.ui-state-error-text .ui-icon {
-	background-image: url("images/ui-icons_cc0000_256x240.png");
+.ui-state-error-text .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
+	background-image: url("../../../img/proprietorship/iconminus.svg");
 }
-.ui-button .ui-icon {
+.ui-button .ui-icon {float: left;
+    top: 5px;
+    left: -4px;
+    height: 25px;
 	background-image: url("images/ui-icons_777777_256x240.png");
 }
 
@@ -1098,9 +1121,9 @@ a.ui-button:active,
 .ui-icon-caret-2-e-w { background-position: -144px 0; }
 .ui-icon-triangle-1-n { background-position: 0 -16px; }
 .ui-icon-triangle-1-ne { background-position: -16px -16px; }
-.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-e { background-position: top }
 .ui-icon-triangle-1-se { background-position: -48px -16px; }
-.ui-icon-triangle-1-s { background-position: -65px -16px; }
+.ui-icon-triangle-1-s { background-position: top }
 .ui-icon-triangle-1-sw { background-position: -80px -16px; }
 .ui-icon-triangle-1-w { background-position: -96px -16px; }
 .ui-icon-triangle-1-nw { background-position: -112px -16px; }

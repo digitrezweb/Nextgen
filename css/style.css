@@ -232,25 +232,21 @@ a,p,input::placeholder,label {
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #13B59C;
 }
-
 .nav-menu .drop-down ul,.nav-menu .drop-down .submenu {
-  display: block;
+  display: none;
   position: absolute;
   left: 12px;
   top: calc(100% + 35px);
   z-index: 99;
-  opacity: 0;
-  visibility: hidden;
   padding: 10px 0;
   background: #fff;
   box-shadow: 0px 0px 12px rgb(0 0 0 / 12%);
   transition: 0.3s;
 }
 
-.nav-menu .drop-down:hover > ul,.nav-menu .drop-down:hover > .submenu {
-  opacity: 1;
+.nav-menu .drop-down:hover > ul,.nav-menu .drop-down:hover > .submenu,.nav-menu .drop-down .submenu ul {
+  display: block;
   top: 100%;
-  visibility: visible;
 }
 .nav-menu .drop-down .submenu ul {
   position: static;
@@ -337,6 +333,18 @@ col1 li:hover a {
   width: 21px;
   margin-top: -1px;
 }
+
+.search-form-wrapper {
+  display: none;
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  width: 260px;
+}
+.search-form-wrapper.open {
+  display: block;
+}
+
 a.login {
   color: #13b59c;
 }
@@ -383,6 +391,11 @@ a.login {
 }
 
 /* Mobile Navigation */
+
+.mobile-nav input.search::placeholder {
+  padding-left: 10px;
+}
+
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
@@ -454,12 +467,13 @@ a.login {
   padding-right: 35px;
 }
 
-.mobile-nav .drop-down ul {
+.mobile-nav .drop-down ul,.mobile-nav .drop-down .submenu {
   display: none;
   overflow: hidden;
+  transition: ease-in-out 0.2s;
 }
-.mobile-nav .submenu {
-  display: none;
+.mobile-nav .drop-down.active ul,.mobile-nav .drop-down.active .submenu {
+  display: block;
 }
 .mobile-nav .drop-down li {
   padding-left: 20px;
@@ -490,7 +504,13 @@ a.login {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
-
+.mobile-nav li {
+  position: relative;
+}
+.mobile-nav li .search-form-wrapper {
+  top: 3px;
+  right: 5px;
+}
 /*--------------------------------------------------------------
 # banner Section
 --------------------------------------------------------------*/
@@ -523,7 +543,7 @@ a.login {
   color: #1C1C1C;
   font-family: "AvenirBlack", sans-serif;
 }
-#banner h1 span,h2 span {
+#banner h1 span,h2 span,.payment-label {
   color: #13B59C;
 }
 #banner .btn {
@@ -634,6 +654,25 @@ table tr>*:first-child,table tr>*:last-child {
 );
   right: -44px;
 }
+.nextget-ul {
+  padding-left: 1.7em;
+  list-style-type: none;
+  line-height: 1.2;
+}
+.nextget-ul>li {
+  position: relative;
+}
+.nextget-ul>li:before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  position: absolute;
+  background: url(../img/proprietorship/checked.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  left: -1.7em;
+}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -648,6 +687,10 @@ table tr>*:first-child,table tr>*:last-child {
 ::-webkit-scrollbar-thumb:hover {
   background: #13b59c;
 }
+.form-control:focus {
+  border-color: #13b59c;
+  box-shadow: none;
+}
 @media (min-width: 1024px) {
   .section-title p {
     width: 50%;
@@ -656,7 +699,7 @@ table tr>*:first-child,table tr>*:last-child {
 /*--------------------------------------------------------------
 # Service
 --------------------------------------------------------------*/
-.learn-more{
+.learn-more {
   font-weight: bold;
   text-decoration: underline;
   font-size: 1em;
@@ -973,24 +1016,24 @@ section.why-choose {
   font-size: 0.8em;
 }
 @media (min-width: 768px) {
-#signin,#Register, #signin>div, #Register>div {
-  height: 100vh;
-}
-}
-@media (max-width: 767px){
-  .form{
-    width: 80% !important;
+  #signin,#Register, #signin>div, #Register>div {
+    height: 100vh;
   }
-  .mob_set{
-    padding-top: 20px;
   }
-  .w-25{
-    width: 40% !important;
+  @media (max-width: 767px){
+    .form{
+      width: 80% !important;
+    }
+    .mob_set{
+      padding-top: 20px;
+    }
+    .w-25{
+      width: 40% !important;
+    }
+    h3 {
+      font-size: 25px;
+    }
   }
-  h3 {
-    font-size: 25px;
-  }
-}
 /*--------------------------------------------------------------
 # Register / SignIn End
 --------------------------------------------------------------*/
@@ -999,5 +1042,144 @@ section.why-choose {
 # Proprietorship
 --------------------------------------------------------------*/
 .frequentlybg {
+  padding: 30px 0;
   background-image: url(../img/proprietorship/frequently.png);
+}
+.disadvantages {
+  background: #FDF5F6;
+}
+.advantages {
+  background: #F9F8FF;
+}
+.disadvantages img,.advantages img {
+  height: 9em;
+}
+.disadvantages h4,.advantages h4 {
+  font-size: 1.3em;
+}
+.disadvantages .description,.advantages .description {
+  line-height: 1.4;
+}
+
+.fs14{
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.icon.icon_login:hover {
+  background-color: white;
+  box-shadow: 0px 0px 12px #07394529;
+  opacity: 1;
+  color: #13b59c;
+}  
+
+.icon.icon_login {
+  padding: 1.5em 2em;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  margin: 20px;
+  border-radius: 5px;
+} 
+
+.key_features{
+  background-color: #13B59C1A !important;
+  padding-bottom: 50px;
+}
+
+.Proprietorship{
+  background: url(../img/proprietorship/top-bg.svg);
+  background-size: cover;
+  position: relative;
+  background-position: bottom;
+}
+
+.proprietorship-icon {
+  position: absolute;
+  width: 100px;
+}
+
+.icon1{
+  top: 16%;
+  left: 7%;
+}
+
+.icon2{
+  top: 16%;
+  right: 7%;
+}
+
+.icon3{
+  top: 50%;
+  left: 13%;
+}
+
+.icon4{
+  top: 50%;
+  right: 13%;
+}
+
+.right_icon h6::before {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  left: -2px;
+  top: 0;
+  background: url(../img/proprietorship/next.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.right_icon:hover * {
+  color: #13b59c;
+}
+
+.right_icon:hover h6::before {
+  background: url(../img/proprietorship/next-1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*--------------------------------------------------------------
+# Payment
+--------------------------------------------------------------*/
+.payment .box {
+  border: 2px solid;
+  border-color: transparent;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.payment .standard {
+  border-color:#13b59c;
+}
+.payment .box h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: #777777;
+}
+.payment .box h4 {
+  font-size: 1.5em;
+  color: #13B59C;
+  font-weight: 600;
+}
+.payment .box ul li {
+  padding-bottom: 0.6em;
+}
+.payment .btn-wrap {
+  padding: 20px 15px;
+}
+.payment .btn-buy {
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.payment p {
+  margin-bottom: 0;
 }
