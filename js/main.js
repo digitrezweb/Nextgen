@@ -184,3 +184,11 @@ $( document ).ready(function() {
     $('html').removeClass('search-form-open');
   });
 });
+$(document).mouseup(function(e) 
+{
+    var search_form = $(".search-form-wrapper");
+    if (!search_form.is(e.target) && search_form.has(e.target).length === 0) 
+    {
+      $('.search-form-wrapper').removeClass('open');
+    }
+});
