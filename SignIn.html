@@ -64,15 +64,15 @@
                             </div>
                             <div class="tab-content">
                                 <div id="tab1" class="tab-pane fade show active" role="tabpanel">
-                                    <form class="form text-left" action="javascript:void(0);">
+                                    <form class="form text-left" method="post" id="signInForm">
                                         <div class="form-group">
-                                            <label for="name">Email</label>
-                                            <input type="email" class="form-control"
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email1" class="form-control"
                                                 placeholder="Enter your registered Email ID" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <label for="name">Password</label>
-                                            <input type="password" class="form-control" placeholder="Enter password"
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password1" class="form-control" placeholder="Enter password"
                                                 name="password">
                                         </div>
                                         <button type="submit" class="btn btn-block btn-nextgen my-3">Sign
@@ -100,6 +100,49 @@
     <!-- JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#signInForm').submit(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                let email = $('#email1').val();
+                let password = $('#password1').val();
+                let data = {"email": email, "password": password};
+                $.ajax({
+                    //url: "https://api.genext.virtualitetech.com/api/auth/login",
+                    url: "http://localhost:8080/api/auth/login",
+                    type: "POST",
+                    crossDomain: true,
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    headers : {
+                        "content-type": "application/json",
+                        "cache-control": "no-cache",
+                    },
+                    success:function(result) {
+                        let token = result.accessToken;
+                        let amount = window.localStorage.getItem('amount');
+                        let serviceCode = window.localStorage.getItem('serviceCode');
+                        let getLinkRequest = {
+                            //url: "https://api.genext.virtualitetech.com/api/pg/link?amount=" + amount + "&serviceCode=" + serviceCode,
+                            url: "http://localhost:8080/api/pg/link?amount=" + amount + "&serviceCode=" + serviceCode,
+                            type: "GET",
+                            crossDomain: true,
+                            headers: {
+                                "authorization": "Bearer " + token
+                            }
+                        }
+                        $.ajax(getLinkRequest).done(function (response) {
+                            window.location.href = response;
+                        });
+                    },
+                    error:function(xhr,status,error){
+                        alert(status);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

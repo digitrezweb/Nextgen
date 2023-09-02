@@ -990,7 +990,12 @@ a.ui-button:active,
 	color: #ffffff;
 	text-decoration: none;
 }
-
+.ui-state-hover span {
+    background-image: url(../../../img/proprietorship/iconplus1.svg) !important;
+}
+.ui-state-active span {
+	background-image: url(../../../img/proprietorship/iconminus.svg) !important;
+}
 /* Interaction Cues
 ----------------------------------*/
 .ui-state-highlight,

@@ -31,7 +31,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="drop-down active"><a href="#">Business Setup</a>
+          <li class="drop-down"><a href="#">Business Setup</a>
             <div class="submenu p-0">
               <div class="row m-0">
                 <div class="col-md-5 px-0 py-2">
@@ -43,7 +43,7 @@
                   </ul>
                 </div>
                 <div class="col-md-7 px-0 py-2">
-                  <ul class="col2">
+                  <ul class="col2 rightmenu">
                     <li><a href="proprietorship.html">Proprietership</a></li>
                     <li><a href="#">Partnership</a></li>
                     <li><a href="#">One Person Company</a></li>
@@ -416,8 +416,37 @@
     </div>
   </footer><!-- End Footer -->
   <div id="enquire" class="enquire"><button class="btn btn-nextgen">Enquire Now</button></div>
+  <div id="enquire-form" class="enquire-form">
+    <form class="form text-left" action="javascript:void(0);">
+      <h3 class="mb-3">Get Quote Instantly in a Minute</h3>
+      <div class="form-group">
+        <label for="name" class="text-secondary mb-0">Full Name<sup>*</sup></label>
+        <input type="text" class="form-control" name="name">
+      </div>
+      <div class="form-group">
+          <label for="email" class="text-secondary mb-0">Email ID<sup>*</sup></label>
+          <input type="email" class="form-control" name="email">
+      </div>
+      <div class="form-group">
+        <label for="phone" class="text-secondary mb-0">Mobile Number<sup>*</sup></label>
+        <input type="number" class="form-control" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="city" class="text-secondary mb-0">City<sup>*</sup></label>
+        <input type="text" class="form-control" name="city">
+      </div>
+      <div class="form-group">
+          <label for="quote" class="text-secondary mb-0">Looking for<sup>*</sup></label>
+          <input type="text" class="form-control" name="quote">
+      </div>
+      <div class="form-group text-center mt-3">
+        <button type="submit" class="btn btn-outline-primary btn-nextgen btn-nextgen-outline"><span>Enquire Now</span></button>
+      </div>
+  </form>
+  <a href="javascript:void(0);" id="form-close" class="form-close"></a>
+  </div>
   <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="#" class="back-to-top btn btn-outline-primary btn-nextgen btn-nextgen-outline">Move to Top</a>
 
   <!-- JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

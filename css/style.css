@@ -97,26 +97,9 @@ a,p,input::placeholder,label {
   position: fixed;
   display: none;
   right: 15px;
-  bottom: 15px;
+  bottom: 45px;
+  background-color: white;
   z-index: 99999;
-}
-
-.back-to-top i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: #13B59C;
-  color: #fff;
-  transition: all 0.4s;
-}
-
-.back-to-top i:hover {
-  background: #13B59C;
-  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -209,6 +192,9 @@ a,p,input::placeholder,label {
 #header.header-scrolled .nav-menu a {
   padding: 15px 3px;
 }
+.login:hover {
+  text-decoration: underline;
+}
 /* 
 .nav-menu > ul > li > a:before {
   content: "";
@@ -230,6 +216,24 @@ a,p,input::placeholder,label {
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #13B59C;
+  transform: translateX(-2px);
+}
+.drop-down ul li:hover a {
+  transform: none;
+}
+.btn-nextgen:hover span {
+  transform: translateX(-2px);
+}
+.btn-nextgen span {
+  display:inline-block;
+  transition: 0.2s;
+}
+/* @keyframes nextgenanimate {
+  0%   {transform: translateX(3px);}
+  100% {transform: translateX(0px);}
+} */
+.nav-menu li:hover .search-form-tigger,.nav-menu li:hover .register{
+  transform: translateX(0px);
 }
 .nav-menu .drop-down ul,.nav-menu .drop-down .submenu {
   display: none;
@@ -288,7 +292,7 @@ a,p,input::placeholder,label {
   height: 100%;
   border-left: 5px solid #13b59c;
 }
-col1 li:hover a {
+.col1 li:hover a {
   color: #13b59c;
 }
 #header.header-scrolled .nav-menu .drop-down ul a {
@@ -362,13 +366,14 @@ a.login {
   box-shadow: 0 0 0 0.2rem rgb(19 181 156 / 28%);
 }
 .btn-nextgen-outline {
-  background: transparent;
+  background: #ffffff;
   color: #13b59c;
   border: 2px solid;
 }
 
 .btn {
   transition: 0.2s ease-in-out;
+  border-radius: 3px;
 }
 .btn:hover {
     color: #ffffff;
@@ -573,6 +578,15 @@ section {
   padding: 40px 0;
   overflow: hidden;
 }
+.w-70{
+  width: 70%;
+}
+.w-80{
+  width: 80%;
+}
+.w-90{
+  width: 90%;
+}
 table {
   border: 1px solid #dddddd ;
   font-size: 0.8em;
@@ -632,6 +646,10 @@ table tr>*:first-child,table tr>*:last-child {
 ::-webkit-scrollbar-thumb:hover {
   background: #13b59c;
 }
+::selection {
+  background: #13b59c;
+  color: #ffffff;
+}
 .form-control:focus {
   border-color: #13b59c;
   box-shadow: none;
@@ -646,12 +664,10 @@ table tr>*:first-child,table tr>*:last-child {
 --------------------------------------------------------------*/
 .learn-more {
   font-weight: bold;
-  text-decoration: underline;
   font-size: 1em;
 }
 .learn-more:hover {
   text-decoration: underline;
-text-shadow: 1px -1px 3px rgb(0 0 0 / 20%);
 }
 .services .card {
   border: none;
@@ -973,8 +989,10 @@ section.why-choose {
 }
 .forgot_password {
   font-weight: bold;
-  text-decoration: underline;
   font-size: 0.8em;
+}
+.forgot_password:hover {
+  text-decoration: underline;
 }
 @media (min-width: 768px) {
   #signin,#Register, #signin>div, #Register>div {
@@ -1090,12 +1108,10 @@ section.why-choose {
 # Payment
 --------------------------------------------------------------*/
 .payment .box {
-  border: 2px solid;
-  border-color: transparent;
+  border: 2px solid #E5E5E5;
   padding: 20px;
   background: #fff;
   text-align: center;
-  box-shadow: 0px 0px 3px rgb(0 0 0 / 20%);
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -1103,7 +1119,8 @@ section.why-choose {
   transition: 0.2s;
 }
 .payment .box:hover {
-  border-color:#13b59c;
+  box-shadow: 0px 5px 12px #0000001F;
+  border: 2px solid #13B59C;
 }
 .payment .box h3 {
   font-size: 1em;
@@ -1119,7 +1136,7 @@ section.why-choose {
   padding-bottom: 0.6em;
 }
 .payment .btn-wrap {
-  padding: 20px 15px;
+  padding: 15px 15px;
 }
 .payment .btn-buy {
   border-radius: 4px;
@@ -1130,3 +1147,115 @@ section.why-choose {
 .payment p {
   margin-bottom: 0;
 }
+
+/* Enquire form */
+.enquire-form input, .enquire-form label, .enquire-form button {
+  font-size: 0.7em;
+}
+.form-control {
+  height: calc(1em + .75rem + 2px);
+  padding: .175rem .675rem;
+}
+.enquire-form h3 {
+    font-size: 1em;
+    font-family: 'AvenirBlack';
+}
+.enquire-form form {
+  width: auto;
+}
+.enquire-form .form-group {
+  margin-bottom: 0.4em;
+}
+.form-close {
+  width: 1.4em;
+  height: 2em;
+  position: absolute;
+  top: 1em;
+  left: 0.5em;
+  background-image: url(../img/formclose.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.enquire-form {
+  position: fixed;
+  top: 14%;
+  right: 0%;
+  width: 360px;
+  transform: translateX(370px);
+  background: white;
+  padding: 1em 2em;
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 16%);
+  transition: 0.2s ease-in-out;
+}
+.open-form {
+  transform: translateX(0px);
+}
+label sup {
+  color: #f21221;
+  margin-left: 3px;
+  font-weight: bold;
+  font-size: 1em;
+}
+@media (max-width: 767px) {
+.enquire-form .form {
+    width: 100% !important;
+}
+.enquire-form {
+  width: auto;
+}
+}
+/* Enquire form */
+/* custom select input */
+.nextgen-select {
+  position: relative;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-align: left;
+}
+.nextgen-select select {
+  display: none; 
+}
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #1c1c1c transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent transparent transparent;
+  top: 7px;
+}
+.select-items div, .select-selected {
+  cursor: pointer;
+  user-select: none;
+}
+.select-items div, .select-selected {
+  margin: 4px 0px;
+  padding: 0.1em 0.5em;
+}
+.select-items {
+  position: absolute;
+  background-color: #ffffff;
+  top: calc(100% - 2px);
+  border-radius: 0px 0px 3px 3px;
+  left: 0;
+  border: 1px solid #13B59C;
+  border-top: none;
+  right: 0;
+  z-index: 99;
+}
+.select-selected {
+  border: 1px solid #13B59C;
+  border-radius: 3px;
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected,.select-arrow-active {
+  background-color: #e7f7f5;
+}
+/* custom select input */
